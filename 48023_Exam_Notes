@@ -1,0 +1,387 @@
+SEMESTER 1 2023 - 48023 - Programming Fundamentals - Java Exam Summary Notes
+
+VARIABLES
+    - Location in memory that the developer has reserved for the program - Primitive (One value at a time) - Reference (more complex data structures)
+    
+    How to with Variables: 
+    1. Define the data type - boolean, int, double, String
+    2. Name the variable - must be unique 
+    3. Equate it to a value with a singular '='
+    4. Close it of with a semicolon ";"
+
+    int number = 5 ; 
+
+CAPTURE INPUT FROM THE USER 
+    - Need to utilise pre defined code classes; need to import the method and classes into our code.
+
+    How to with Scanner:
+    1. Import the class/methods so we csan extend the functionality of our java program
+    2. Create a new non-primitive variable and define it as a variable to use throughout the program
+    3. Utilise the method and syntax to get input to be prompted
+    4. Collect the input from the keyboard and redirect it 
+
+    import java.util.Scanner;
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in) ; 
+
+        System.out.println("Please enter your favourite food: ");
+        String favouriteFood = input.nextLine();
+
+        System.out.println( favouriteFood + " is mine also!"); 
+    }
+
+    - Retrieving other data types
+        - String: <variable name>.nextLine();
+        - Integer: <variable name>.nextInt();
+        - Double: <variable name>.nextDouble(); 
+    
+CONDITIONALS AND IF STATEMENTS 
+    - Boolean comparison of values to either return and true or false output. 
+
+    How to with conditions and if-statements:
+    1. Outline whether we want the condition to exit if a condition if true or false.
+         -	&& operator = AND
+         -	|| operator = OR
+         -	! operator = Not 
+    2. Define our condition.
+        -	A == B
+        -	A != B
+        -	A < B
+        -	A > B
+        -	A <= B
+        -	A >= B
+    3. Construct and if statement and enter the condition in.
+    4. OPTIONAL: utilise an else if or an else statement attached
+    5. Define what will happen 
+
+    public static void main(String[] args) {
+
+        int number1 = 5;
+        int number2 = 10;
+
+        if (number1 > number 2) {
+            System.out.println("1 is bigger than 2"); 
+        } else if (number1 == number2) {
+            System.out.println("1 and 2 are equal");
+        } else {
+            System.out.println("1 is smaller than 2"); 
+        }
+    }
+
+ARRAYS
+    - A 1D array is a special type of variable that can contain multiple sequences of values. 
+
+    How to with 1D Arrays:
+    1. Declare the array and what data type and name it will have.
+        - <data type> <name>[] ; 
+    2. Initalise the array giving it values or a size.
+        - Initalise it with values --> <data type> <name> = {value1 , value2, value3} ; --> must declare/Initalise in same line
+        - Initalise it with a size --> <data type> <name> = new <data type>[int size] ; 
+    3. Retrieve the value of a specific index.
+        - <name>[index]; --> remember that arrays start from 0
+    4. Ammend values into the array.
+        - <name>[index] = <name>[index] <+ - / * > [int value];
+    5. Retrieve the length of an array.
+        - <name>.length
+    
+    - A 2D array works like a normal 1D array but uses two indexes to access each element instead of one. 
+        - First index is the row.
+        - Second index is the column. 
+
+            0       1       2       3       4
+            ______________________________________
+        0   [0][0]  [0][1]  [0][2]  [0][3]  [0][4]
+
+        1   [1][0]  [1][1]  [1][2]  [1][3]  [1][4]
+
+
+    How to with 2D Arrays:
+    1. Declare the array and what data type and name it will have.
+        - <data type> <name>[][] ; 
+    2. Initalise the array giving it values or a size.
+        - Initalise it with values --> <data type> <name> = {{value1 , value2, value3} , {value1 , value2, value3}}  ; --> must declare/Initalise in same line
+        - Initalise it with a size --> <data type> <name> = new <data type>[int size][int size] ; 
+    3. Retrieve the value of a specific index.
+        - <name>[index][index]; --> remember that arrays start from 0
+    4. Ammend values into the array.
+        - <name>[index][index] = <new value>;
+    5. Retrieve the length of an array.
+        - <name>.length
+
+    - Strings are already a sequence of characters so another way we can see a string is an array of characters.
+        - String name = "BOB" == char[] name = {'B' , 'O' , 'B'} ; 
+        - It is important to remember that a String is just an array of characters!
+
+        How to with String Arrays:
+        1. Access and indivdual character within a String.
+            - <variable name>.charat(<index>);
+        2. Convert from String to an array of characters.
+            - <String Variable>.toCharArray();
+        3. Convert from Char array to a String.
+            - new String(<charArrayVariable>); 
+
+    - IF YOU EVER WANT TO RESIZE AN ARRAY!
+        1. Create a temporary array and Initalise it with the desired size.
+        2. Copy each element from the old array into the new array.
+        3. Use <old Array Name> = <new Array name> to make the original array the resized array.
+
+CODING WITH LOOPS
+    - We need loops to ensure that our code is efficent and can do repetitive tasks automatically
+        - While Loops = repeats the code as long as the boolean code conditoion is true <-- when dont know number of times we want to iterate over the loop.
+        - For Loops = repeats the code as many times as we have declared the loop to do <-- when do know number. 
+
+    How to with While Loops:
+    1. Define the boolean condition.
+    2. Write what will happen as long as the condition remain true.
+
+    int count = 0;
+    while (count < 10) {
+        System.out.println("Still not at 10 yet");
+        count = count + 1; 
+    }
+
+    How to with For Loops:
+    1. Initalise the loop variable.
+    2. Define the loop condition; when will the loop be terminated?
+    3. modify the variable as each loop reiterates.
+
+
+    for (int i = 0 ; i < total ; i+=1) {
+			System.out.println(message);
+		}
+
+    Potential errors with loops:
+        - Infinite loops can occur if there is an issue with the condition not being updated over each iteration. 
+        - Scope errors will occur if we have defined a variable in the loop and we want to use it outside the loop.
+            - To fix just declare it outside the loop and do not Initalise it with any value
+
+    BREAK vs CONTINUE IN LOOPS:
+        - break = quit loop before loop goes through every iteration defined in the condition --> breaks the loop sequence. 
+        - continue = will make the loop go to the next iteration --> acts as a filter, restarts the loop sequence.
+
+METHODS
+    - A method is a piece of code that has a name that can be invoked and executed by calling it --> primary mechanism for code reuse and efficency.
+
+    How to create a method:
+    1. Decide whether you want the method to be public or private - private means it can only be accessed and called upon within the actual class it is made in
+    2. Decide whether you want the method to be static or non-static
+        - static = belongs to the class instead of an instance of the class --> do not need define an instance of it  
+        - Non-static = belongs to an instance of the class --> need to call an instance of it; belongs to each object generate within the class
+    3. Determine the return type 
+        - void = if not returning anything
+    4. Define the method name so it can be called upon
+    5. Determine the input parameters such as the data type and the info it is drawing on 
+
+    public int exampleMethod (int num1, int num2) {
+        //code goes here
+        int number = num1 + num2 ; 
+        return number; 
+    }
+
+    How to call on a method when in same class:
+    1. Call the method name with brackets.
+    2. Ensure all the input conditions are being met. 
+
+    exampleMethod(); 
+
+    How to call on a method when in a different class:
+    1. Create an object of the class
+        - specify class name, variable you want to use in this specific class, new keyword, variable name
+    2. Call the method variable that we created in the object with brackets
+    3. Ensure all the input conditions are being met. 
+
+    public static void main(String[] args) {
+
+        Guesses playerGuesses = new Guesses();
+        Cell playerGuess = getPlayerGuess(playerGuesses); 
+    }
+
+    private static Cell getPlayerGuess(Guesses playerGuesses) {
+        if (playerGuesses.isGuessed(guess)) { 
+            System.out.println("You guessed that already!");
+            continue;
+        }
+    }
+
+CLASSES AND OBJECTS
+   - Classes are objects that contain both data and methods 
+
+   ____________________________                    _________________________
+   Book Class                    Are Initalised as  Objects
+   ____________________________                    _________________________
+   title    | text                                  title   | Harry Potter
+   author   | (list of text)                        author  | JK Rowling
+   barcode  | text                                  barcode | 99876-78999
+
+    ^ Properties  - variable defined by the class where actual variable value differes from object to object
+
+    - Think of classes like custome variable types 
+
+    How to Access elements within a class or object:
+    1. <class or object>.<property or method within the class or object>
+
+    How to create a new instance of a class:
+    1. new <ClassName>(<optional parameters>)
+
+    How to define own class:
+    1. Define the access modifier
+        - public or private
+    2. Determine the class name
+    3. Define variables outside the methods 
+        - public or private  
+    4. Create a Constructor
+        - define a method that is void and name is exactly same as class
+    
+    Static VS Non-Static 
+    - Static = Cause property or method to become global --> stored in single memory rather than seperate
+                --> Dont have to create an instace of it  
+
+
+     public static void main(String[] args) {
+
+        Guesses playerGuesses = new Guesses();
+        Cell playerGuess = getPlayerGuess(playerGuesses); 
+    }
+
+    private static Cell getPlayerGuess(Guesses playerGuesses) {
+        if (playerGuesses.isGuessed(guess)) { 
+            System.out.println("You guessed that already!");
+            continue;
+        }
+    }
+    
+
+    Passing Variables:
+    - primitive variables are passed by value
+    - object variables are passed by reference. 
+
+
+LIST COLLECTIONS
+    - Works like an array but has no size set 
+    
+    How to use ArrayList and LinkedList:
+    1. Import the class extension
+        - import java.util.ArrayList ; 
+        - import java.util.LinkedList;
+        - import java.util.List; 
+    2. Declare and initalise:
+        - ArrayList<ElementClass> variableName = new ArrayList<ElementClass>() ; 
+    3. Add elements to the list:
+        - <VariableName>.add(<value>); //adds to the end of the list
+        - <VariableName>.add(<index> , <value>) ; //add to a specific point 
+    4. Accessing elements within the list:
+        - <variableName>.get(<index>) ; 
+    5. Return the size of the list as an int:
+        - <variableName>.size();
+    6. Return as a boolean if the list is empty:
+        - <variableName>.isEmpty(); 
+    7. Remove a value:
+        - <variableName>.remove(<index>); 
+    8. Replace a value:
+        - <variableName>.set(<index> , <value>);
+
+    - However, Lists are unable to store primitive values such as int and double.
+    - Therefore, we need to use wrapper classes with capital letters
+        - Integer, Boolean, Double etc. 
+        - It is important to highlight that these wrapper classes can return a null value. 
+
+    - When you dont care about what type --> just initalise it as a List:
+        - List<<wrapperClass>> <variableName> = new <ListType><<wrapperclass>>(); 
+
+    private List<StudentResult> results; //create a new list 
+
+    public StudentResultRepo() {
+        results = new ArrayList<>(); //create a new arraylist that can be accessed to store the info
+    }
+
+    //accept list of SR and return notthing - add all the .tsv result into array list 
+    public void addAll(List<StudentResult> resultList) {
+        results.addAll(resultList); 
+    }
+
+
+INHERITANCE AND POLYMORPHISM
+    
+    INHERITANCE
+    - Inhertiance is the idea that classes can inherit functionality from each other. 
+
+           |PRODUCT|
+              |
+    |CLOTHING| |ELECTRONIC|
+                      |
+            |COMPUTER||CAMERA|
+        
+        Product Class = fields storing key data like price, name and description
+        Clothing Class = inherit all functionality of product class and add fields such as size
+        Electronic Class = inherit all functionality of product class and add fields such as make 
+        Computer + Camera class = inherit functionality of product/Electronic and add fields such as memory
+
+    How to establish a stream of inheritance:
+    1. Using the key word extends
+
+        public class Clothing extends Product {
+            //code goes here
+        }
+
+    2. Use the key word super and/or this to access specific variables
+        - super.<variableName> ; //child class to access parent class functionality
+        - this.<variableName> ; //child class to access child variable not parent with same name
+
+    3. Alter and Add functionality in child class ontop of parent class functionality
+        - use the @Override annotation 
+
+        public static class Cow extends Animal {
+            @Override
+            public String makeNoise() {
+                return super.makeNoise() + ", Moo!" ; 
+            }
+        }
+
+    POLYMORPHISM 
+    - Polymorphism is the idea where an object can have multiple data types 
+
+    How to implement an object that has multiple data types:
+    1. create a generic variable
+        Product p = new ClothingItem(___);
+    2. Add values into the list
+        List<product> shoppingCart = new ArrayList<Product>;
+        shoppingCart.add(new Camera(__)); 
+    3. Generalise what is input and returned in a method
+        public Product getReccomendation (product p) {
+            //CODE HERE 
+        }
+
+ABSTRACT CLASSES AND METHODS 
+    - Specify functionality without implementing that functionality
+    - Can define methods that are incomplete and force any extending classes to implement the incomplete methods
+
+    How to create an abstract class and method:
+    1. Pass the abstract key word
+
+    public abstract class Shape() {
+        abstract double getArea();
+        abstract void draw(String Colour) ; 
+    }
+
+    How to Instantiating an abstract class
+
+    INTERFACE CLASS
+
+CODING WITH GENERICS 
+    - 
+TYPES OF ERRORS 
+    - Compile time error --> Only occurs when code is not valid
+
+    <class>:<line>: error: <description>
+    <problematic code>
+
+    - Run time error --> Only occurs when the code crashes 
+
+    Exception in thread <thread> <errorClass> : <errorMessage> 
+        at <class>.<method>(<file>:<lineNumber>)
+        at <class>.<method>(<file>:<lineNumber>)
+
+    - Logic Error --> No error code, only can be picked up by user if code does not work as intended
+
+
+    
